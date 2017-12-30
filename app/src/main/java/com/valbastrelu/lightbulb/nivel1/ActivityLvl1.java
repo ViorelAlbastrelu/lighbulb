@@ -1,10 +1,14 @@
-package com.valbastrelu.lightbulb;
+package com.valbastrelu.lightbulb.nivel1;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import com.valbastrelu.lightbulb.R;
+import com.valbastrelu.lightbulb.nivel2.ActivityLvl2;
 
 import java.util.Observable;
 
@@ -12,7 +16,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnCheckedChanged;
 
-public class ActivityLvl1 extends AppCompatActivity implements LightBulbViewI {
+public class ActivityLvl1 extends AppCompatActivity implements Lvl1ViewI {
 
 //    @BindView(R.id.switch1) Switch switch1;
 //    @BindView(R.id.switch2) Switch switch2;
@@ -21,12 +25,14 @@ public class ActivityLvl1 extends AppCompatActivity implements LightBulbViewI {
 //    @BindView(R.id.switch5) Switch switch5;
 
     @BindView(R.id.textView) TextView textView;
-    private LightBulbPresenter presenter;
+    private Lvl1Presenter presenter;
     private Observable observable;
 
     @Override
     public void setTextLabel(String text) {
         textView.setText(text);
+        Intent i = new Intent(this, ActivityLvl2.class);
+        this.startActivity(i);
     }
 
     @BindView(R.id.switch6)
@@ -37,7 +43,7 @@ public class ActivityLvl1 extends AppCompatActivity implements LightBulbViewI {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lvl1);
         ButterKnife.bind(this);
-        presenter = new LightBulbPresenter(this);
+        presenter = new Lvl1Presenter(this);
         System.out.println("Activity onCreate() called!");
     }
 
@@ -47,7 +53,7 @@ public class ActivityLvl1 extends AppCompatActivity implements LightBulbViewI {
             switch (button.getId()) {
                 case R.id.switch1:
                     presenter.updateCheckCode(0, 1);
-                    System.out.println("Changed switch 1 state!");
+                    System.out.println("Changed switch 1 state to 1!");
                     break;
                 case R.id.switch2:
                     presenter.updateCheckCode(1, 1);
@@ -69,6 +75,7 @@ public class ActivityLvl1 extends AppCompatActivity implements LightBulbViewI {
             switch (button.getId()) {
                 case R.id.switch1:
                     presenter.updateCheckCode(0, 0);
+                    System.out.println("Changed switch 1 state to 0!");
                     break;
                 case R.id.switch2:
                     presenter.updateCheckCode(1, 0);

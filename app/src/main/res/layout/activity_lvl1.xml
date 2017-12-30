@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/holo_blue_dark"
-    tools:context="com.valbastrelu.lightbulb.ActivityLvl1">
+    tools:context="com.valbastrelu.lightbulb.nivel1.ActivityLvl1">
 
     <ImageView
         android:id="@+id/imgBec"

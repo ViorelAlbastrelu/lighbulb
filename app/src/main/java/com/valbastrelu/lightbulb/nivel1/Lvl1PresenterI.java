@@ -1,8 +1,8 @@
-package com.valbastrelu.lightbulb;
+package com.valbastrelu.lightbulb.nivel1;
 
 /**
  * Created by Crow on 19/12/2017.
  */
-public interface LightBulbPresenterI {
+public interface Lvl1PresenterI {
     void presentEqualityState(boolean state);
 }

@@ -1,23 +1,22 @@
-package com.valbastrelu.lightbulb;
+package com.valbastrelu.lightbulb.nivel1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 
 /**
  * Created by Crow on 10/12/2017.
  */
 
-public class LightBulbLvl1Model {
+public class Lvl1Model {
 
-    private final LightBulbPresenterI bulbPresenter;
+    private final Lvl1PresenterI bulbPresenter;
 
     Integer[] codAscuns, codDeGhicit;
     List<Integer> cod;
     List<Integer> codToCheck;
 
-    public LightBulbLvl1Model(LightBulbPresenterI bulbPresenter) {
+    public Lvl1Model(Lvl1PresenterI bulbPresenter) {
         this.bulbPresenter = bulbPresenter;
 
         codAscuns = new Integer[]{1, 1, 0, 0, 0, 0};
