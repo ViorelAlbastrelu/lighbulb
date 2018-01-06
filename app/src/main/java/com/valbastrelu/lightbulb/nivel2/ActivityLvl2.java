@@ -1,6 +1,6 @@
 package com.valbastrelu.lightbulb.nivel2;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -9,12 +9,14 @@ import android.widget.ProgressBar;
 import android.widget.Switch;
 
 import com.valbastrelu.lightbulb.R;
+import com.valbastrelu.lightbulb.finish.FinishActivity;
+import com.valbastrelu.lightbulb.main.LevelActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnCheckedChanged;
 
-public class ActivityLvl2 extends AppCompatActivity implements Lvl2ViewI{
+public class ActivityLvl2 extends LevelActivity implements Lvl2ViewI{
 
     private Lvl2Presenter lvl2Presenter;
     @BindView(R.id.energyBarlvl2) ProgressBar energyBar;
@@ -23,10 +25,9 @@ public class ActivityLvl2 extends AppCompatActivity implements Lvl2ViewI{
     @BindView(R.id.switch2) Switch switch2;
     @BindView(R.id.switch3) Switch switch3;
     @BindView(R.id.btnFinishlvl2) Button btnFinishlvl2;
-    private boolean isOn;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lvl2);
         ButterKnife.bind(this);
@@ -80,5 +81,11 @@ public class ActivityLvl2 extends AppCompatActivity implements Lvl2ViewI{
         imageShowOn.setImageResource(android.R.drawable.presence_online);
         else
             imageShowOn.setImageResource(android.R.drawable.presence_invisible);
+    }
+
+    @Override
+    public void nextLevel() {
+        Intent i = new Intent(this, FinishActivity.class);
+        this.startActivity(i);
     }
 }

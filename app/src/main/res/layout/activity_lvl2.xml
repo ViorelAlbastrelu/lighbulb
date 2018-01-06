@@ -34,7 +34,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:background="@android:drawable/dialog_holo_dark_frame"
-        android:progress="20"
+        android:progress="0"
         app:layout_constraintBottom_toTopOf="@+id/layoutComponente"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"

@@ -1,22 +1,20 @@
 package com.valbastrelu.lightbulb.nivel1;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 
 import com.valbastrelu.lightbulb.R;
+import com.valbastrelu.lightbulb.main.LevelActivity;
 import com.valbastrelu.lightbulb.nivel2.ActivityLvl2;
-
-import java.util.Observable;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnCheckedChanged;
 
-public class ActivityLvl1 extends AppCompatActivity implements Lvl1ViewI {
+public class ActivityLvl1 extends LevelActivity implements Lvl1ViewI{
 
 //    @BindView(R.id.switch1) Switch switch1;
 //    @BindView(R.id.switch2) Switch switch2;
@@ -24,22 +22,15 @@ public class ActivityLvl1 extends AppCompatActivity implements Lvl1ViewI {
 //    @BindView(R.id.switch4) Switch switch4;
 //    @BindView(R.id.switch5) Switch switch5;
 
-    @BindView(R.id.textView) TextView textView;
+    @BindView(R.id.textView)
+    TextView textView;
     private Lvl1Presenter presenter;
-    private Observable observable;
-
-    @Override
-    public void setTextLabel(String text) {
-        textView.setText(text);
-        Intent i = new Intent(this, ActivityLvl2.class);
-        this.startActivity(i);
-    }
 
     @BindView(R.id.switch6)
     Switch switch6;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lvl1);
         ButterKnife.bind(this);
@@ -94,7 +85,17 @@ public class ActivityLvl1 extends AppCompatActivity implements Lvl1ViewI {
                     break;
             }
         }
-
     }
 
+    @Override
+    public void setTextLabelAndGoToNextLevel(String text) {
+        textView.setText(text);
+    }
+
+    @Override
+    public void nextLevel() {
+        textView.setText("WIN!!!");
+        Intent i = new Intent(this, ActivityLvl2.class);
+        this.startActivity(i);
+    }
 }

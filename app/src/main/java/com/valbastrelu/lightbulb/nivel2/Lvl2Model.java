@@ -14,16 +14,21 @@ public class Lvl2Model {
         this.lvl2PresenterI = lvl2PresenterI;
     }
 
-
     public void changeOnIndicator(boolean checked) {
         this.isOn = checked;
     }
 
     public void updateProgress() {
-        if (isOn) {
-            progress += 20;
-        } else progress -= 20;
+        if (progress >= 0 && progress <= 100) {
+            if (isOn) {
+                progress += 20;
+            } else progress -= 20;
+        }
         lvl2PresenterI.clearSwitch();
         lvl2PresenterI.updateProgress(progress);
+        if (progress == 100) {
+            //TODO notify and change to Activityfinish
+            lvl2PresenterI.levelComplete();
+        }
     }
 }

@@ -39,4 +39,9 @@ class Lvl2Presenter implements Lvl2PresenterI {
     public void updateProgress(int progress) {
         lvl2ViewI.updateProgressBar(progress);
     }
+
+    @Override
+    public void levelComplete() {
+        lvl2ViewI.nextLevel();
+    }
 }

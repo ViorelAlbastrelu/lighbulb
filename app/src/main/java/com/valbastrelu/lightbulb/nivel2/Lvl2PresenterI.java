@@ -12,4 +12,6 @@ public interface Lvl2PresenterI {
     void clearSwitch();
 
     void updateProgress(int progress);
+
+    void levelComplete();
 }

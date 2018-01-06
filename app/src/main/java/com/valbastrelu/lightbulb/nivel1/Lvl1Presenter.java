@@ -25,7 +25,8 @@ class Lvl1Presenter implements Lvl1PresenterI {
     }
 
     public void changeText(String s) {
-        viewI.setTextLabel(s);
+        viewI.setTextLabelAndGoToNextLevel(s);
+        viewI.nextLevel();
     }
 
     public void updateCheckCode(int i, int e) {
@@ -34,6 +35,7 @@ class Lvl1Presenter implements Lvl1PresenterI {
 
     @Override
     public void presentEqualityState(boolean state) {
-        if (state) changeText("WIN");
+        if (state) viewI.nextLevel();
+//        if (state) changeText("WIN");
     }
 }
