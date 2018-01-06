@@ -7,5 +7,5 @@ import com.valbastrelu.lightbulb.main.LevelViewI;
  */
 
 interface Lvl1ViewI extends LevelViewI{
-    void setTextLabelAndGoToNextLevel(String text);
+    void setTextLabel(String text);
 }

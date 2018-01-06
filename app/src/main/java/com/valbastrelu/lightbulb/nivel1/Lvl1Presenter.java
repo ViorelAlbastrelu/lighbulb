@@ -24,18 +24,16 @@ class Lvl1Presenter implements Lvl1PresenterI {
         }
     }
 
-    public void changeText(String s) {
-        viewI.setTextLabelAndGoToNextLevel(s);
-        viewI.nextLevel();
-    }
-
     public void updateCheckCode(int i, int e) {
         lightBulbModel.pushAction(i, e);
     }
 
     @Override
     public void presentEqualityState(boolean state) {
-        if (state) viewI.nextLevel();
-//        if (state) changeText("WIN");
+        if (state)
+        {
+            viewI.setTextLabel("WIN!!!");
+            viewI.nextLevel();
+        }
     }
 }

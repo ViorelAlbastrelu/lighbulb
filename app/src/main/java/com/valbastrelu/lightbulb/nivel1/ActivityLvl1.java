@@ -88,7 +88,7 @@ public class ActivityLvl1 extends LevelActivity implements Lvl1ViewI{
     }
 
     @Override
-    public void setTextLabelAndGoToNextLevel(String text) {
+    public void setTextLabel(String text) {
         textView.setText(text);
     }
 
