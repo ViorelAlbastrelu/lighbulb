@@ -13,18 +13,12 @@ public class Lvl1Model {
     private final Lvl1PresenterI bulbPresenter;
 
     Integer[] codAscuns, codDeGhicit;
-    List<Integer> cod;
-    List<Integer> codToCheck;
 
     public Lvl1Model(Lvl1PresenterI bulbPresenter) {
         this.bulbPresenter = bulbPresenter;
 
-        codAscuns = new Integer[]{1, 1, 0, 0, 0, 0};
+        codAscuns = new Integer[]{1, 0, 1, 0, 1, 0};
         codDeGhicit = new Integer[]{0, 0, 0, 0, 0, 0};
-        cod = new ArrayList<>(5);
-        codToCheck = new ArrayList<>(5);
-        cod = Arrays.asList(1, 1, 0, 0, 0, 0);
-        codToCheck = Arrays.asList(0, 0, 0, 0, 0, 0);
     }
 
     public void pushAction(int index, Integer element) {
@@ -35,9 +29,6 @@ public class Lvl1Model {
         System.out.println("COD: " + Arrays.toString(codAscuns));
         System.out.println("COD2CHECK: " + Arrays.toString(codDeGhicit));
         boolean valid = Arrays.equals(codAscuns, codDeGhicit);
-//        codToCheck.add(index, element);
-//        codToCheck.remove(6);
-//        boolean valid = cod.equals(codToCheck);
         bulbPresenter.presentEqualityState(valid);
     }
 

@@ -1,5 +1,7 @@
 package com.valbastrelu.lightbulb.nivel2;
 
+import com.valbastrelu.lightbulb.main.Scor;
+
 /**
  * Created by Crow on 28/12/2017.
  */
@@ -22,7 +24,10 @@ public class Lvl2Model {
         if (progress >= 0 && progress <= 100) {
             if (isOn) {
                 progress += 20;
-            } else progress -= 20;
+            } else {
+                progress -= 20;
+                Scor.scorPenalty();
+            }
         }
         lvl2PresenterI.clearSwitch();
         lvl2PresenterI.updateProgress(progress);

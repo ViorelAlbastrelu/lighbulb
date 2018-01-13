@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.valbastrelu.lightbulb.R;
 import com.valbastrelu.lightbulb.main.LevelActivity;
+import com.valbastrelu.lightbulb.main.Scor;
 import com.valbastrelu.lightbulb.nivel2.ActivityLvl2;
 
 import butterknife.BindView;
@@ -66,7 +67,6 @@ public class ActivityLvl1 extends LevelActivity implements Lvl1ViewI{
             switch (button.getId()) {
                 case R.id.switch1:
                     presenter.updateCheckCode(0, 0);
-                    System.out.println("Changed switch 1 state to 0!");
                     break;
                 case R.id.switch2:
                     presenter.updateCheckCode(1, 0);
@@ -84,6 +84,7 @@ public class ActivityLvl1 extends LevelActivity implements Lvl1ViewI{
                     presenter.updateCheckCode(5, 0);
                     break;
             }
+            Scor.scorPenalty();
         }
     }
 

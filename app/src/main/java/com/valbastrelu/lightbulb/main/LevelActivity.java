@@ -15,9 +15,11 @@ public abstract class LevelActivity extends AppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getActionBar().setTitle("");
     }
 
     void nextLevel(String className){
+        Scor.scorBonus();
         Intent i = null;
         try {
             i = new Intent(this, Class.forName(className).getClass());
