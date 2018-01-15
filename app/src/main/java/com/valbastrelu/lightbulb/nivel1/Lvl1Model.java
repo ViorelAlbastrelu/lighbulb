@@ -1,8 +1,13 @@
 package com.valbastrelu.lightbulb.nivel1;
 
-import java.util.ArrayList;
+import android.util.Log;
+
+import com.valbastrelu.lightbulb.main.Scor;
+
 import java.util.Arrays;
-import java.util.List;
+import java.util.Objects;
+
+import static com.valbastrelu.lightbulb.main.LevelActivity.TAG;
 
 /**
  * Created by Crow on 10/12/2017.
@@ -17,7 +22,7 @@ public class Lvl1Model {
     public Lvl1Model(Lvl1PresenterI bulbPresenter) {
         this.bulbPresenter = bulbPresenter;
 
-        codAscuns = new Integer[]{1, 0, 1, 0, 1, 0};
+        codAscuns = new Integer[]{1, 0, 1, 0, 1, 1};
         codDeGhicit = new Integer[]{0, 0, 0, 0, 0, 0};
     }
 
@@ -25,9 +30,11 @@ public class Lvl1Model {
         for (int i = 0; i < codDeGhicit.length; i++) {
             if (i == index) codDeGhicit[index] = element;
         }
-        System.out.println("ADD: index = " + index + " value = " + element);
-        System.out.println("COD: " + Arrays.toString(codAscuns));
-        System.out.println("COD2CHECK: " + Arrays.toString(codDeGhicit));
+        if(!Objects.equals(codAscuns[index], codDeGhicit[index]))
+            Scor.scorPenalty();
+        Log.i(TAG, "ADD: index = " + index + " value = " + element);
+        Log.i(TAG, "COD: " + Arrays.toString(codAscuns));
+        Log.i(TAG, "COD2CHECK: " + Arrays.toString(codDeGhicit));
         boolean valid = Arrays.equals(codAscuns, codDeGhicit);
         bulbPresenter.presentEqualityState(valid);
     }

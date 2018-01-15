@@ -31,6 +31,7 @@ public class Lvl2Model {
         }
         lvl2PresenterI.clearSwitch();
         lvl2PresenterI.updateProgress(progress);
+        lvl2PresenterI.updateScor();
         if (progress == 100) {
             //TODO notify and change to Activityfinish
             lvl2PresenterI.levelComplete();

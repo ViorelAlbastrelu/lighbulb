@@ -7,6 +7,25 @@
     android:background="@android:color/holo_blue_dark"
     tools:context="com.valbastrelu.lightbulb.nivel2.ActivityLvl2">
 
+    <TextView
+        android:id="@+id/textScor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@android:drawable/dialog_holo_dark_frame"
+        android:gravity="center"
+        android:text="SCOR: 0"
+        android:textColor="?android:attr/fastScrollTextColor"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
     <ImageView
         android:id="@+id/imgBec"
         android:layout_width="0dp"

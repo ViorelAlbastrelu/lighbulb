@@ -5,16 +5,18 @@ package com.valbastrelu.lightbulb.main;
  */
 
 public class Scor {
-    private static final Scor ourInstance = new Scor();
 
-    private static int scor;
+    private static Scor scorInstance = null;
 
-    public static Scor getInstance() {
-        return ourInstance;
+    private static int scor = 100;
+
+    public synchronized static Scor getInstance() {
+        if (scorInstance == null)
+            scorInstance = new Scor();
+        return scorInstance;
     }
 
     private Scor() {
-        scor = 100;
     }
 
     public static void scorPenalty() {
@@ -23,5 +25,9 @@ public class Scor {
 
     public static void scorBonus() {
         scor += 100;
+    }
+
+    public static int getScor() {
+        return scor;
     }
 }

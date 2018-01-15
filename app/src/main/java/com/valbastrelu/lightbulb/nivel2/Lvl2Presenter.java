@@ -1,5 +1,7 @@
 package com.valbastrelu.lightbulb.nivel2;
 
+import com.valbastrelu.lightbulb.main.Scor;
+
 /**
  * Created by Crow on 28/12/2017.
  */
@@ -42,6 +44,13 @@ class Lvl2Presenter implements Lvl2PresenterI {
 
     @Override
     public void levelComplete() {
-        lvl2ViewI.nextLevel();
+        Scor.scorBonus();
+        lvl2ViewI.levelFinished();
+    }
+
+    @Override
+    public void updateScor() {
+        String scor = String.format("Scor: %d", Scor.getScor());
+        lvl2ViewI.setTextLabel(scor);
     }
 }

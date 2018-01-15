@@ -12,13 +12,16 @@ import com.valbastrelu.lightbulb.nivel2.ActivityLvl2;
  */
 
 public abstract class LevelActivity extends AppCompatActivity {
+
+    public static final String TAG = "BEC";
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getActionBar().setTitle("");
+//        getActionBar().setTitle("");
     }
 
-    void nextLevel(String className){
+    void goToActivity(String className){
         Scor.scorBonus();
         Intent i = null;
         try {
