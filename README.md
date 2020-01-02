@@ -11,5 +11,5 @@ Successfull patterns:
 Failed patterns: 
 * Decorator
 
-![screenshot](lightbulb-leve1.png)
-![screenshot](lightbulb-leve2.png)
+![screenshots](screenshots/lightbulb-leve1.png)
+![screenshots](screenshots/lightbulb-leve2.png)
