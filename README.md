@@ -11,5 +11,8 @@ Successfull patterns:
 Failed patterns: 
 * Decorator
 
-![screenshots](screenshots/lightbulb-leve1.png)
-![screenshots](screenshots/lightbulb-leve2.png)
+## Screenshots for each level
+### Level 1
+![screenshots](https://raw.githubusercontent.com/ViorelAlbastrelu/lightbulb/master/screenshots/lightbulb-leve1.png)
+### Level 2
+![screenshots](https://raw.githubusercontent.com/ViorelAlbastrelu/lightbulb/master/screenshots/lightbulb-leve1.png)
